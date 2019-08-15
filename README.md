@@ -28,7 +28,7 @@ You can specify different options to the maze, so that you can test your IA in d
 
 **For the core part of the project, your IA must be able to gather resources without ever dying in all modes except the maze mode.**
 
-Usage: maze [options] IA1 [IA2, ..., IA26]
+-Usage: maze [options] IA1 [IA2, ..., IA26]
 
     -s SIZE, --size=SIZE             Specifies the size of the map (must be in s, m, l, xl, xxl), default m
     
