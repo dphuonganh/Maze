@@ -10,13 +10,13 @@ We provide you with a program (a "virtual machine") that defines an area where r
 
 ## Your mission
 
-You will code an IA agent that interacts with the maze. The goal of your IA is to move around to gather the resources in the maze, without colluding into the walls represented by echo ("#") (if it does, your IA dies!). Every time you gather a resource, you win a point: your goal is therefore to get the highest score possible.
+You will code an IA agent that interacts with the maze. The goal of your IA is to move around to gather the resources in the maze, without colluding into the walls represented by echo (`#`) (if it does, your IA dies!). Every time you gather a resource, you win a point: your goal is therefore to get the highest score possible.
 
 There are two types of resources you can gather:
 
-* echo ("o") are permanent and worth 1 point
-* echo ("!") are ephemeral -they only last 20 turns before disappearing- and are worth 2 points
-Your IA must be in a file named echo ("maze_ia.py"), at the root of your git repository.
+* echo (`o`) are permanent and worth 1 point
+* echo (`!`) are ephemeral -they only last 20 turns before disappearing- and are worth 2 points
+Your IA must be in a file named echo (`maze_ia.py`), at the root of your git repository.
 
 **Note:** your Python file must start with a shebang specifying Python as the interpreter. See the example below showing the first line of the IA.
 
@@ -24,7 +24,7 @@ Your IA must be in a file named echo ("maze_ia.py"), at the root of your git rep
 
 You will find the binary of the maze below. The executable takes one or several IAs (up to 26) as arguments.
 
-You can specify different options to the maze, so that you can test your IA in different conditions. The echo ("kind") option allows you to choose the mode.
+You can specify different options to the maze, so that you can test your IA in different conditions. The echo (`kind`) option allows you to choose the mode.
 
 **For the core part of the project, your IA must be able to gather resources without ever dying in all modes except the maze mode.**
 
@@ -58,11 +58,11 @@ The VM loads the IAs in the order they are given on the command-line, and attrib
 
 Here's the communication protocol:
 
-* On loading the IA, the VM will send "HELLO\n\n" → The IA answers with "I AM <name>\n\n" (with its own name in place of <name>)
-* The VM then answers with the letter attributed to the IA: "YOU ARE <letter>\n\n" → The IA answers "OK\n\n"
-* The VM puts the IA inside the maze and returns "MAZE\n" + the maze to be parsed followed by "\n\n" → From there the IA can send its move with "MOVE [UP/DOWN/RIGHT/LEFT]\n\n"
+* On loading the IA, the VM will send `HELLO\n\n` → The IA answers with `I AM <name>\n\n` (with its own name in place of <name>)
+* The VM then answers with the letter attributed to the IA: `YOU ARE <letter>\n\n` → The IA answers `OK\n\n`
+* The VM puts the IA inside the maze and returns `MAZE\n` + the maze to be parsed followed by `\n\n` → From there the IA can send its move with `MOVE [UP/DOWN/RIGHT/LEFT]\n\n`
   
-As you can see all communication messages end with "\n\n".
+As you can see all communication messages end with `\n\n`.
 
 There's a 2 seconds timeout for IAs. If your IA fails to send its move to the VM within 2 seconds, it will die. Your IA will also die if you send an invalid message to the VM.
 
